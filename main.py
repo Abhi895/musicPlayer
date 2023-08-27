@@ -9,8 +9,7 @@ from io import BytesIO
 import re
 import unicodedata
 import yt_dlp
-from tkinter import DoubleVar, Label, messagebox, Toplevel
-from mttkinter import mtTkinter
+from tkinter import DoubleVar, Label, Toplevel
 from tkinter import font as tkFont 
 from tkmacosx import Button
 from RangeSlider.RangeSlider import RangeSliderH
