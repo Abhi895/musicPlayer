@@ -93,7 +93,7 @@ def removeBrackets(s):
 
 def createImage(filepath, width, height):
     i = Image.open(filepath)
-    i = i.resize((width, height), Image.ANTIALIAS)
+    i = i.resize((width, height), Image.LANCZOS)
     i = ImageTk.PhotoImage(image=i)
 
     return i
@@ -580,6 +580,8 @@ def addSong(e1, e2, win, label):
     songName = e1.get()
     artistName = e2.get()
     mins, secs = 0, 0
+    image2 = createImage("images/slidercircle.png", 13, 13)
+
 
     _, realSongName, artistNames, genres, internet = getInfo(songName, artistName)
 
@@ -901,6 +903,8 @@ def getPlaylist(index, array, buttonArray):
     songPlayer.resizable(False, False)
     songPlayer.lift()
 
+    pygame.mixer.init()
+    
     for i in range(len(buttonArray)):
         if i == index:
             buttonArray[index].config(bg="#B751C6", fg="white")
@@ -934,7 +938,7 @@ def getPlaylist(index, array, buttonArray):
         
 
 # Main Program
-root=tkinter.Tk(mt_debug=1)
+root=tkinter.Tk()
 
 hidden = True
 paused = False
